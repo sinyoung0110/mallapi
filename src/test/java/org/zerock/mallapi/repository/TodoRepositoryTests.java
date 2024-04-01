@@ -35,9 +35,9 @@ public class TodoRepositoryTests{
 
 
             Todo todo = Todo.builder()
-                    .title("Title"+i)
-                    .content("content.."+i)
-                    .dueDate(LocalDate.of(2024, 3, 31))
+                    .title("Title...." + i)
+                    .content("content.." + i)
+                    .dueDate(LocalDate.of(2024, 4, 2))
                     .build();
 
             Todo result = todoRepository.save(todo);
@@ -75,6 +75,10 @@ public class TodoRepositoryTests{
         log.info(result.getTotalElements());
 
         log.info(result.getContent());
+    }
+    @Test
+    public void testSearch1(){
+        todoRepository.search1();
     }
 
 
