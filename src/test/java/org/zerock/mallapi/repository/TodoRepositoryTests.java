@@ -32,8 +32,6 @@ public class TodoRepositoryTests{
     public void testInsert(){
 
         for(int i=0;i<100;i++) {
-
-
             Todo todo = Todo.builder()
                     .title("Title...." + i)
                     .content("content.." + i)
@@ -48,10 +46,11 @@ public class TodoRepositoryTests{
     @Test
     public void testRead(){
         Long tno=1L;
-        Optional<Todo> result=todoRepository.findById(tno);
-        Todo todo=result.orElseThrow();
+        java.util.Optional<Todo> result = todoRepository.findById(tno);
+        Todo todo = result.orElseThrow();
         log.info(todo);
     }
+
     @Test
     public void testUpdate(){
         Long tno=1L;
@@ -59,7 +58,7 @@ public class TodoRepositoryTests{
         Todo todo=result.orElseThrow();
 
         todo.changeTitle("Update Title");
-        todo.changeContent("updated ocntent");
+        todo.changeContent("updated content");
         todo.changeComplete((true));
 
         todoRepository.save(todo);

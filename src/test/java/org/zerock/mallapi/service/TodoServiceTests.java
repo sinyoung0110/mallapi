@@ -23,8 +23,8 @@ public class TodoServiceTests {
     @Test
     public void testRegister(){
         TodoDTO todoDTO = TodoDTO.builder()
-                .title("Title....")
-                .content("Content.......")
+                .title("Title..")
+                .content("Content..")
                 .dueDate(LocalDate.of(2024,4,1))
                 .build();
         log.info(todoService.register(todoDTO));
@@ -32,7 +32,7 @@ public class TodoServiceTests {
 
     @Test
     public void testGetList(){
-        PageRequestDTO pageRequestDTO=PageRequestDTO.builder().page(11).build();
+        PageRequestDTO pageRequestDTO=PageRequestDTO.builder().build();
 
         log.info(todoService.getList(pageRequestDTO));
     }
